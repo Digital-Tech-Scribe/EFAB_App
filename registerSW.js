@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/EFAB_App/sw.js', { scope: '/EFAB_App/' })})}
