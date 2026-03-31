@@ -1,0 +1,11 @@
+import{w as r,r as o,j as e,n as m}from"./index-DHq4XwOo.js";import{A as d,g as x,i as p}from"./aboutContent-C3YJyyiX.js";/**
+ * @license lucide-react v0.522.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const h=[["path",{d:"M5 12h14",key:"1ays0h"}]],u=r("minus",h);/**
+ * @license lucide-react v0.522.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const b=[["path",{d:"M5 12h14",key:"1ays0h"}],["path",{d:"M12 5v14",key:"s699le"}]],g=r("plus",b);function w(){const[l,c]=o.useState(0);return e.jsxs("div",{className:"relative z-10 min-h-screen bg-cream pb-32 pt-28",children:[e.jsx(m,{eyebrow:"Support",title:"FAQ",intro:"Practical answers around enquiry, payment plans, required documents, estate management, and change of ownership.",items:x("faq"),align:"left",mediaImage:d,mediaAlt:"EFAB FAQ hero",mediaOverlayOpacity:.46}),e.jsx("section",{className:"container mx-auto px-6 pt-16 md:pt-20",children:e.jsx("div",{className:"border-t border-black/10 pt-4",children:p.map((s,a)=>{const t=l===a,i=s.answer.length>1;return e.jsxs("div",{className:"border-b border-black/10",children:[e.jsxs("button",{type:"button",onClick:()=>c(t?null:a),className:"flex w-full items-center justify-between gap-6 py-7 text-left md:py-8",children:[e.jsx("span",{className:"font-sans text-[1.35rem] uppercase leading-[1.02] tracking-[-0.04em] text-black md:text-[2rem]",children:s.question}),e.jsx("span",{className:"flex h-10 w-10 flex-shrink-0 items-center justify-center border border-black/15 text-black transition-colors hover:bg-black hover:text-white",children:t?e.jsx(u,{className:"h-4 w-4"}):e.jsx(g,{className:"h-4 w-4"})})]}),t&&e.jsx("div",{className:"pb-8 md:pb-10",children:i?e.jsx("ul",{className:"max-w-[52rem] space-y-3 pl-5",children:s.answer.map(n=>e.jsx("li",{className:"font-sans text-lg leading-relaxed text-black/66 md:text-[1.12rem]",children:n},n))}):e.jsx("p",{className:"max-w-[52rem] font-sans text-lg leading-relaxed text-black/66 md:text-[1.12rem]",children:s.answer[0]})})]},s.question)})})})]})}export{w as default};
