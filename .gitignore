@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+__tests__/
+
+# Production
+dist/
+
+# Misc
+.DS_Store
+*.pem
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log*
+
+# Markdown files (ignoring all except Readme.md)
+*.md
+!README.md
+!Readme.md
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript build info
+*.tsbuildinfo
+
+# AI Assistant / Agent files
+fluid_glass_extract.json
+fluid_styles.txt
+test_fluid_glass.html
+loader_review_frames/
+.kilo/
+Screen Recording*.mp4
+Screen Recording*.mov
+CODEBASE_ERROR_REPORT.md
+
+# Removed root configs to hide from GitHub
+.env.example
+.eslintrc.js
+.prettierrc
+setupTests.ts
+vitest.config.ts

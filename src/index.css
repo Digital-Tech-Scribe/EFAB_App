@@ -1,0 +1,195 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --size: 1600;
+    
+    /* Core palette */
+    --color-black: #0b1012;
+    --color-white: #fff;
+    --color-cream: #f3f0ec;
+    --color-taupe: #d4cec6;
+    --color-grey: #212325;
+    
+    /* Component backgrounds */
+    --background: var(--color-black);
+    --foreground: var(--color-white);
+    
+    /* Easing */
+    --ease-in-out-quart: cubic-bezier(.77,0,.175,1);
+    --ease-in-out-cubic: cubic-bezier(.645,.045,.355,1);
+    --ease-in-out-quad: cubic-bezier(.455,.03,.515,.955);
+    --ease-out-quart: cubic-bezier(.165,.84,.44,1);
+    --ease-out-cubic: cubic-bezier(.215,.61,.355,1);
+    --ease-out-quad: cubic-bezier(.25,.46,.45,.94);
+    --ease-none: cubic-bezier(.25,.25,.75,.75);
+    
+    /* Fonts */
+    --font-f-aeonik-mono: "Geist Mono", monospace;
+    --font-f-aeonik-pro: "Geist", sans-serif;
+    
+    /* Fluid typography sizing */
+    --font-s: calc((100vw / var(--size)) * 10);
+  }
+
+  @media(max-width: 600px) {
+    :root {
+      --size: 375;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-overflow-style: none;
+    overscroll-behavior: none;
+    font-size: var(--font-s);
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: var(--color-black);
+    color: var(--color-grey);
+    font-family: var(--font-f-aeonik-pro);
+    margin: 0;
+    text-rendering: optimizeSpeed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 { font-weight: 400; margin: 0; }
+  a { color: inherit; text-decoration: none; }
+}
+
+@layer utilities {
+  .animate-reveal-text {
+    animation: revealText 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    transform: translateY(110%) rotate(5deg);
+    opacity: 0;
+  }
+
+  .animate-slide-up-fade {
+    animation: slideUpFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 3s infinite;
+  }
+}
+
+@layer components {
+  .estate-richtext {
+    color: rgba(11, 16, 18, 0.72);
+  }
+
+  .estate-richtext > * + * {
+    margin-top: 1.5rem;
+  }
+
+  .estate-richtext :where(h1, h2, h3) {
+    color: #0b1012;
+    font-family: var(--font-f-aeonik-pro);
+    font-size: clamp(2.4rem, 4.8vw, 4.8rem);
+    letter-spacing: -0.05em;
+    line-height: 0.94;
+    margin-top: 3rem;
+  }
+
+  .estate-richtext :where(h4, h5, h6) {
+    border-top: 1px solid rgba(11, 16, 18, 0.1);
+    color: rgba(11, 16, 18, 0.42);
+    font-family: var(--font-f-aeonik-mono);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-transform: uppercase;
+  }
+
+  .estate-richtext p {
+    font-family: var(--font-f-aeonik-pro);
+    font-size: 1.12rem;
+    letter-spacing: -0.015em;
+    line-height: 1.8;
+    margin-top: 1rem;
+    max-width: 52rem;
+  }
+
+  .estate-richtext :where(ul, ol) {
+    display: grid;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+  }
+
+  .estate-richtext li {
+    border-top: 1px solid rgba(11, 16, 18, 0.1);
+    padding-top: 0.75rem;
+  }
+
+  .estate-richtext img {
+    border: 1px solid rgba(11, 16, 18, 0.1);
+    display: block;
+    height: auto;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+
+  .estate-richtext iframe {
+    aspect-ratio: 16 / 9;
+    border: 0;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+
+  .estate-richtext table {
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+
+  .estate-richtext :where(td, th) {
+    border: 1px solid rgba(11, 16, 18, 0.1);
+    font-family: var(--font-f-aeonik-pro);
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 1rem 1.1rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .estate-richtext a {
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
+  }
+}
+
+@keyframes revealText {
+  0% {
+    transform: translateY(110%) rotate(5deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFade {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
